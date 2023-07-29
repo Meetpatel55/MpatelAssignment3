@@ -1,0 +1,96 @@
+<head>
+    <%- include("../shared/head") %>
+
+</head>
+<body>
+    <h1>MyShop</h1>
+    <div class="container">
+        <% if (typeof errors !== "undefined") {for (let error of errors) {%>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p><%= error.msg %><br></p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        <% }}%>
+
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label class="form-label" for="fullname">Name</label>
+                <input class="form-control" style="border: solid black;" type="text" name="fullname" />
+            </div> 
+
+            <div class="mb-3">
+                <label class="form-label" for="email">Email- Address</label>
+                <input class="form-control" style="border: solid black;" type="text" name="email" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="contactNumber">Phone number</label>
+                <input class="form-control" style="border: solid black;" type="text" name="contactNumber" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" style="border: solid black;" type="text" name="address" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="city">City</label>
+                <input class="form-control" style="border: solid black;" type="text" name="city" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="postalCode">Postal Code</label>
+                <input class="form-control" style="border: solid black;" type="text" name="postalCode" />
+            </div>
+
+            <label class="form-label" for="province">Province</label> &nbsp;&nbsp;
+            <select class="form-label" style="border: solid black;" name="province">
+                <option class="form-label" value="">-- Select Province --</option>
+                <option class="form-label" value="AB">Alberta</option>
+                <option class="form-label" value="BC">British Columbia</option>
+                <option class="form-label" value="MB">Manitoba</option>
+                <option class="form-label" value="NB">New Brunswick</option>
+                <option class="form-label" value="NL">Newfoundland and Labrador</option>
+                <option class="form-label" value="NS">Nova Scotia</option>
+                <option class="form-label" value="ON">Ontario</option>
+                <option class="form-label" value="PE">Prince Edward Island</option>
+                <option class="form-label" value="QC">Quebec</option>
+                <option class="form-label" value="SK">Saskatchewan</option>
+                <option class="form-label" value="NT">Northwest Territories</option>
+                <option class="form-label" value="NU">Nunavut</option>
+                <option class="form-label" value="YT">Yukon</option>
+              </select>
+
+            <div class="mb-3">
+                <label class="form-label" for="productOne">Product 1 ($3)</label>
+                <input class="form-control" style="border: solid black;" type="text" name="productOne" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="productTwo">Product 2 ($5)</label>
+                <input class="form-control" style="border: solid black;" type="text" name="productTwo" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="productThree">Product 3 ($7)</label>
+                <input class="form-control" style="border: solid black;" type="text" name="productThree" />
+            </div>
+
+            <div>
+                <label class="form-label" for="delivery">Delivery Time</label> &nbsp;&nbsp;
+                <select class="form-label" style="border: solid black;" name="delivery">
+                    <option class="form-label" value="">-- Select Days--</option>
+                    <option class="form-label" value="dayOne">1 Day</option>
+                    <option class="form-label" value="dayTwo">2 Days</option>
+                    <option class="form-label" value="dayThree">3 Days</option>
+                </select>
+            </div>
+            <div class="form-submit-container">
+                <input class="btn btn-outline-secondary" style="border: solid black;color: black; background-color:darksalmon;" type="submit" value="Place Order" />
+            </div>
+        </form>
+        
+    </div>
+    <%- include("../shared/footer") %>
+    <%- include("../shared/scripts") %>
+</body>
